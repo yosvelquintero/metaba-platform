@@ -6,7 +6,7 @@
   "devCommand": "pnpm dev:web-app",
   "functions": {
     "apps/web-app/src/app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
   },
   "env": {
