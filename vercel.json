@@ -4,11 +4,6 @@
   "framework": "nextjs",
   "installCommand": "pnpm install --frozen-lockfile",
   "devCommand": "pnpm dev:web-app",
-  "functions": {
-    "apps/web-app/src/app/api/**/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "env": {
     "NX_DAEMON": "false",
     "NX_PARALLEL": "1"
