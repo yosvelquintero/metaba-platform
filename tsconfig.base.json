@@ -11,12 +11,14 @@
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2020", "dom"],
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@metaba-platform/api-app": ["apps/api-app/src/main.ts"],
-      "@metaba-platform/web-app": ["apps/web-app/src/app/page.tsx"]
+      "@metaba-platform/web-app": ["apps/web-app/src/app/page.tsx"],
+      "@metaba-platform/shared-ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
