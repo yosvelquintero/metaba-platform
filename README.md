@@ -4,10 +4,16 @@ Welcome to the Metaba Platform monorepo! This repository contains the core appli
 
 ## Overview
 
-Metaba Platform is an Nx-managed monorepo designed to build and scale modern web applications. It currently houses two primary applications:
+Metaba Platform is an Nx-managed monorepo designed to build and scale modern web applications. It features a component-first architecture with shared libraries and multiple applications:
+
+### Applications
 
 - **`api-app`**: A Nest.js backend API providing robust server-side functionality
 - **`web-app`**: A Next.js frontend application delivering modern user experiences
+
+### Libraries
+
+- **`shared/ui`**: A reusable UI component library built with React, Tailwind CSS, and Radix UI primitives. Includes its own build, lint, and test scripts for independent development.
 
 The architecture is built with scalability and maintainability in mind, leveraging Nx's powerful tooling for efficient development and deployment workflows.
 
@@ -23,9 +29,12 @@ metaba-platform/
 │   ├── web-app/                  # Next.js frontend application
 │   └── web-app-e2e/              # E2E tests for web-app
 ├── libs/                         # Shared libraries and utilities
+│   └── shared/
+│       └── ui/                   # Reusable UI component library
 ├── nx.json                       # Nx workspace configuration
 ├── package.json                  # Root package.json with scripts
 ├── tsconfig.base.json            # Base TypeScript configuration
+├── DESIGN_SYSTEM.md              # Design system architecture guide
 └── README.md                     # This file
 ```
 
@@ -62,6 +71,14 @@ All scripts should be run from the root of the monorepo using `pnpm run <script-
 | `test:web-app`       | Run Jest tests                          |
 | `test:web-app:ci`    | Run tests with CI configuration         |
 | `type-check:web-app` | TypeScript type checking                |
+
+### UI Library (shared/ui) Scripts
+
+| Script     | Description                    |
+| ---------- | ------------------------------ |
+| `build:ui` | Build the UI component library |
+| `lint:ui`  | Run ESLint on UI library       |
+| `test:ui`  | Run Jest tests for UI library  |
 
 ### Global Scripts
 
@@ -206,25 +223,31 @@ This platform is built using modern and robust technologies:
    git checkout -b feature/your-feature-name
    ```
 
-2. **Start development servers:**
+2. **Fixing bugs:**
+
+   ```bash
+   git checkout -b bugfix/your-bug-name
+   ```
+
+3. **Start development servers:**
 
    ```bash
    pnpm run dev:all
    ```
 
-3. **Run tests:**
+4. **Run tests:**
 
    ```bash
    pnpm run test:all
    ```
 
-4. **Lint code:**
+5. **Lint code:**
 
    ```bash
    pnpm run lint:all
    ```
 
-5. **Type check:**
+6. **Type check:**
    ```bash
    pnpm run type-check:all
    ```
@@ -313,6 +336,16 @@ pnpm update
 ```
 
 ---
+
+## Architecture
+
+This platform implements a **component-first design system** with:
+
+- **Decoupled UI components** in `libs/shared/ui` that work with any Tailwind setup
+- **App-specific configurations** where each app controls its own theming
+- **CSS variables** for consistent theming contracts between apps and components
+
+See [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for detailed architecture information.
 
 ## Learn More
 
