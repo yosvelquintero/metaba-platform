@@ -1,34 +1,64 @@
-import { Logo, Hero, Features, Scripts } from '@metaba-platform/shared-ui';
+import {
+  Header,
+  Hero,
+  Features,
+  Scripts,
+  type NavigationItem,
+} from '@metaba-platform/shared-ui';
+
+const navigationItems: NavigationItem[] = [
+  {
+    title: 'Features',
+    href: '#features',
+    description: 'Explore platform capabilities and features',
+  },
+  {
+    title: 'Scripts',
+    href: '#scripts',
+    description: 'Available development and build scripts',
+  },
+  {
+    title: 'Documentation',
+    href: '#docs',
+    description: 'Get started with comprehensive guides',
+  },
+  {
+    title: 'Components',
+    items: [
+      {
+        title: 'UI Components',
+        href: '#ui-components',
+        description: 'Reusable UI components built with React and Tailwind',
+      },
+      {
+        title: 'Layout Components',
+        href: '#layout-components',
+        description: 'Layout components for consistent page structure',
+      },
+      {
+        title: 'Form Components',
+        href: '#form-components',
+        description: 'Form components with built-in validation',
+      },
+      {
+        title: 'Data Components',
+        href: '#data-components',
+        description: 'Components for displaying and managing data',
+      },
+    ],
+  },
+];
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Logo />
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <a
-              href="#features"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#scripts"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Scripts
-            </a>
-            <a
-              href="#docs"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Documentation
-            </a>
-          </nav>
-        </div>
-      </header>
+      {/* Header with improved navigation */}
+      <Header
+        variant="sticky"
+        navigationItems={navigationItems}
+        showThemeToggle={true}
+        className="pt-12"
+      />
 
       {/* Hero Section */}
       <Hero
@@ -77,7 +107,7 @@ export default function HomePage() {
                     pnpm install
                   </code>
                   <code className="block bg-muted p-3 rounded text-sm">
-                    pnpm run dev:all
+                    pnpm dev:all
                   </code>
                 </div>
               </div>

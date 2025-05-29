@@ -1,4 +1,5 @@
 import './global.css';
+import { ThemeProvider } from '@metaba-platform/shared-ui';
 
 export const metadata = {
   title: 'Metaba Platform - Modern Web Application Framework',
@@ -12,8 +13,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen font-sans antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

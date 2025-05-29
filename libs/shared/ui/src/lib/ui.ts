@@ -9,3 +9,13 @@ export * from './components/ui/logo';
 export * from './components/ui/hero';
 export * from './components/ui/features';
 export * from './components/ui/scripts';
+
+// Export navigation components
+export * from './components/ui/navigation-menu';
+export * from './components/ui/dropdown-menu';
+export * from './components/ui/sheet';
+export * from './components/ui/header';
+
+// Export theme components
+export * from './components/ui/theme-provider';
+export * from './components/ui/theme-toggle';
