@@ -12,6 +12,14 @@ const nextConfig = {
     // svgr: true, // Deprecated - configure SVGR manually if needed
     // babelUpwardRootMode: true,
   },
+  // Ensure the build output is optimized
+  output: 'standalone',
+  // Disable experimental features that might cause issues
+  experimental: {
+    // Disable features that might not work well in Vercel
+  },
+  // Transpile shared UI library for better compatibility
+  transpilePackages: ['@metaba-platform/shared-ui'],
 };
 
 const plugins = [

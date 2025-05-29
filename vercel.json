@@ -1,7 +1,16 @@
 {
-  "buildCommand": "pnpm build:web-app:prod",
+  "buildCommand": "pnpm build:web-app:prod:vercel",
   "outputDirectory": "apps/web-app/.next",
   "framework": "nextjs",
   "installCommand": "pnpm install --frozen-lockfile",
-  "devCommand": "pnpm dev:web-app"
+  "devCommand": "pnpm dev:web-app",
+  "functions": {
+    "apps/web-app/src/app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "NX_DAEMON": "false",
+    "NX_PARALLEL": "1"
+  }
 }

@@ -6,6 +6,10 @@
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
   },
+  "volta": {
+    "node": "18.19.0",
+    "pnpm": "8.15.1"
+  },
   "scripts": {
     "// ----- API App Scripts": "",
     "dev:api-app": "nx serve api-app",
@@ -20,6 +24,7 @@
     "build:web-app": "nx build web-app",
     "build:web-app:dev": "nx build web-app --configuration=development",
     "build:web-app:prod": "nx build web-app --configuration=production",
+    "build:web-app:prod:vercel": "nx build ui && nx build web-app --configuration=production",
     "serve:web-app": "nx serve web-app",
     "serve:web-app:dev": "nx serve web-app --configuration=development",
     "serve:web-app:prod": "nx serve web-app --configuration=production",
