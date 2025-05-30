@@ -1,8 +1,8 @@
 {
   "framework": "nextjs",
   "buildCommand": "cd ../.. && pnpm build:web-app:prod:vercel",
-  "outputDirectory": "../../dist/apps/web-app",
-  "installCommand": "cd ../.. && echo 'Current directory after cd: ' $(pwd) && echo 'Listing files: ' && ls -la && echo 'Attempting pnpm install...' && pnpm install --frozen-lockfile",
+  "outputDirectory": ".next",
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
   "devCommand": "cd ../.. && pnpm dev:web-app",
   "env": {
     "NX_DAEMON": "false",
