@@ -1,7 +1,7 @@
 {
   "framework": "nextjs",
   "buildCommand": "cd ../.. && pnpm build:web-app:prod:vercel",
-  "outputDirectory": ".next",
+  "outputDirectory": "../../dist/apps/web-app",
   "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
   "devCommand": "cd ../.. && pnpm dev:web-app",
   "env": {
