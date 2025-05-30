@@ -2,14 +2,6 @@
   "name": "@metaba-platform/source",
   "version": "0.0.0",
   "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
-  },
-  "volta": {
-    "node": "18.19.0",
-    "pnpm": "8.15.1"
-  },
   "scripts": {
     "// ----- API App Scripts": "",
     "dev:api-app": "nx serve api-app",
