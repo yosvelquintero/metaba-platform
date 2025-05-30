@@ -1,10 +1,17 @@
 {
-  "framework": "nestjs",
-  "buildCommand": "cd ../.. && pnpm nx run api-app:build:production",
-  "outputDirectory": "../../dist/apps/api-app",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "env": {
-    "NX_DAEMON": "false",
-    "NX_PARALLEL": "1"
-  }
+  "version": 2,
+
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+    }
+  ]
 }
