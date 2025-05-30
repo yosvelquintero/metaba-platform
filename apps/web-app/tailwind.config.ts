@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss';
 // Web-app specific Tailwind configuration
 const config: Config = {
   content: [
+    // Include web-app application
     './{src,pages,components,app}/**/*.{ts,tsx,js,jsx,html}',
     '!./{src,pages,components,app}/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
     // Include shared UI components
