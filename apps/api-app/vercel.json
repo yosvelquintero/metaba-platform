@@ -1,0 +1,10 @@
+{
+  "framework": "nestjs",
+  "buildCommand": "cd ../.. && pnpm nx run api-app:build:production",
+  "outputDirectory": "../../dist/apps/api-app",
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+  "env": {
+    "NX_DAEMON": "false",
+    "NX_PARALLEL": "1"
+  }
+}
