@@ -1,0 +1,11 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "cd ../.. && pnpm build:web-app:prod:vercel",
+  "outputDirectory": ".next",
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+  "devCommand": "cd ../.. && pnpm dev:web-app",
+  "env": {
+    "NX_DAEMON": "false",
+    "NX_PARALLEL": "1"
+  }
+}
